@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    
+    <div id="particles-js" class="snow"></div>
+    <div class="sign">
+        <span class="fast-flicker">En</span>De<span class="flicker">co</span>de
+      </div>
+    <div class="container">
+        <h1 class="button1">Steganography Web App</h1><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> 
+        
+        
+        <form id="steganographyForm" action="/encode" method="post" enctype="multipart/form-data">
+            <label for="image">Select Image:</label>
+            <input type="file" id="image" name="image" accept="image/*"><br>
+            
+            <label for="audio">Select Audio:</label>
+            <input type="file" id="audio" name="audio" accept="audio/*"><br>
+            
+            <label for="video">Select Video:</label>
+            <input type="file" id="video" name="video" accept="video/*"><br>
+            
+            <label for="message">Enter Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            
+            <button type="submit" class="button-85">Encode</button>
+        </form>
+        <br/><br/>
+        <hr>
+        
+        <form id="decodeForm" action="/decode" method="post" enctype="multipart/form-data">
+            <label for="image">Select Image:</label>
+            <input type="file" id="image" name="image" accept="image/*"><br>
+            
+            <label for="audio">Select Audio:</label>
+            <input type="file" id="audio" name="audio" accept="audio/*"><br>
+            
+            <label for="video">Select Video:</label>
+            <input type="file" id="video" name="video" accept="video/*"><br>
+            
+            <button type="submit" class="button-85">Decode</button>
+        </form>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='scriptt.js') }}"></script>
+</body>
+</html>
